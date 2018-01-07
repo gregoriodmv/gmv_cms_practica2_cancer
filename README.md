@@ -1,26 +1,3 @@
----
-title: "Práctica 2 de Tipología de Datos"
-output:
-  html_document:
-    keep_md: yes
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-
-if(!require(corrplot)){install.packages("corrplot")}
-if(!require(ggplot2)){install.packages("ggplot2")}
-if(!require(ggpubr)){install.packages("ggpubr")}
-if(!require(rcompanion)){install.packages("rcompanion")}
-if(!require(gridExtra)){install.packages("gridExtra")}
-
-library (corrplot)
-library (ggplot2)
-library(ggpubr)
-library(rcompanion)
-library (gridExtra)
-```
-
 ## Tratamiento y Análisis del Dataset de Cáncer de Mama      
 
 **Gregorio de Miguel Vadillo**  
