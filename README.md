@@ -1,5 +1,5 @@
 ---
-title: "Pr·ctica 2 de TipologÌa de Datos"
+title: "Pr√°ctica 2 de Tipolog√≠a de Datos"
 output:
   html_document:
     keep_md: yes
@@ -21,20 +21,20 @@ library(rcompanion)
 library (gridExtra)
 ```
 
-## Tratamiento y An·lisis del Dataset de C·ncer de Mama      
+## Tratamiento y An√°lisis del Dataset de C√°ncer de Mama      
 
 **Gregorio de Miguel Vadillo**  
-**Carlos MuÒiz Solaz**
+**Carlos Mu√±iz Solaz**
 
 **Fecha:** Diciembre 2017 - Enero 2018
 
 ![](images/cancer-mama.jpg)
 
-## 1. DescripciÛn del dataset. øPor quÈ es importante y quÈ pregunta/problema pretende responder?
+## 1. Descripci√≥n del dataset. ¬øPor qu√© es importante y qu√© pregunta/problema pretende responder?
 
 El dataset se corresponde a un conjunto de muestras de cancer de mama recibidas en el Dr. Wolberg, de la Universidad de Wisconsin, en el periodo comprendido entre Enero de 1989 y Noviembre de 1991.
 
-El dataset consiste en 699 observaciones y 11 atributos que definen a cada observaciÛn. De los 11 atributos, 1 atributo se corresponde con el identificador de la muestra, 9 indican caracterÌsticas de una observaciÛn y el undÈcimo indica la clasificaciÛn de la muestra como tumor benigno o tumor maligno. Vease a continuaciÛn informaciÛn sobre los atributos:
+El dataset consiste en 699 observaciones y 11 atributos que definen a cada observaci√≥n. De los 11 atributos, 1 atributo se corresponde con el identificador de la muestra, 9 indican caracter√≠sticas de una observaci√≥n y el und√©cimo indica la clasificaci√≥n de la muestra como tumor benigno o tumor maligno. Vease a continuaci√≥n informaci√≥n sobre los atributos:
 
 1. Sample code number: id number
 2. Clump Thickness: 1 - 10
@@ -48,11 +48,11 @@ El dataset consiste en 699 observaciones y 11 atributos que definen a cada obser
 10. Mitoses: 1 - 10
 11. Class: Variable categorica: 2 -> cancer es benigno, 4 -> cancer es maligno
 
-Los valores 1 a 10 que toman los atributos 2 a 10 reflejan el grado de penetraciÛn del tumor en la cÈlula.
+Los valores 1 a 10 que toman los atributos 2 a 10 reflejan el grado de penetraci√≥n del tumor en la c√©lula.
 
-Contar con una base de datos con muestras reales de cualquier emfermedad, cancer de mama en este caso, y su posterior estudio es de suma importancia, pues permitirÌa poder detectar la enfermedad y aplicar tratamientos en etapas de esta cada vez m·s precoces, lo que sin duda incrementarÌa la probabilidad de supervivencia del paciente. 
+Contar con una base de datos con muestras reales de cualquier emfermedad, cancer de mama en este caso, y su posterior estudio es de suma importancia, pues permitir√≠a poder detectar la enfermedad y aplicar tratamientos en etapas de esta cada vez m√°s precoces, lo que sin duda incrementar√≠a la probabilidad de supervivencia del paciente. 
 
-Muchos son los posibles objetivos que tiene este dataset, aunque nosotros vamos a utilizarlo para determinar las caracterÌsticas que permiten diferenciar una muestra de tumor benigna de una maligna, por lo que nuestro objetido se centra en la clasificaciÛn de muestras.
+Muchos son los posibles objetivos que tiene este dataset, aunque nosotros vamos a utilizarlo para determinar las caracter√≠sticas que permiten diferenciar una muestra de tumor benigna de una maligna, por lo que nuestro objetido se centra en la clasificaci√≥n de muestras.
 
 ### Carga del dataset en el entorno y tratamiento inicial de los datos
 
@@ -61,7 +61,7 @@ Como hemos comentado anteriormente, el dataset contiene 699 observaciones y 11 t
 
 ![**_Formato del fichero que contiene los datos_**](images/formato_fichero.png)
 
-Como puede observarse, el fichero no dispone de *header* y los campos est·n separados por comas. Por lo tanto, empleamos el siguiente comando para realizar la carga de la informaciÛn del fichero dentro den entorno de desarrollo. La variable (data frame) que almacenar· la informaciÛn se llamar· **breast_cancer_set**:
+Como puede observarse, el fichero no dispone de *header* y los campos est√°n separados por comas. Por lo tanto, empleamos el siguiente comando para realizar la carga de la informaci√≥n del fichero dentro den entorno de desarrollo. La variable (data frame) que almacenar√° la informaci√≥n se llamar√° **breast_cancer_set**:
 
 ```{r chunk_carga_1}
 breast_cancer_set<-read.table(file = "breast-cancer.txt", sep = ",")
@@ -79,7 +79,7 @@ Visualizamos los 10 primeros registros del data frame para comprobar la integrid
 head(breast_cancer_set)
 ```
 
-Todos los atributos se han cargado como numÈricos excepto V7, que se ha cargado como factor. Se comprueban sus niveles:
+Todos los atributos se han cargado como num√©ricos excepto V7, que se ha cargado como factor. Se comprueban sus niveles:
 
 ```{r chunk_carga_4}
 levels(breast_cancer_set$V7)
@@ -87,13 +87,13 @@ levels(breast_cancer_set$V7)
 
 ```
 
-Hay un nivel denotado como "?" que aparentemente se corresponde con datos incompletos. De acuerdo a la informaciÛn del dataset, existen 16 datos incompletos. Comprobamos si se corresponden a los niveles denotados con "?":
+Hay un nivel denotado como "?" que aparentemente se corresponde con datos incompletos. De acuerdo a la informaci√≥n del dataset, existen 16 datos incompletos. Comprobamos si se corresponden a los niveles denotados con "?":
 
 ```{r chunk_carga_5}
 table(breast_cancer_set$V7)
 ```
 
-Efectivamente el n˙mero de "?" coincide con el n˙mero de valores incompletos. Nos interesa que todos los atributos sean numÈricos, con lo cual convertimos el atributo V7 a "character". Posteriormente convertimos los "?" a NA y fin·lmente se transforma el atributo a "numeric":
+Efectivamente el n√∫mero de "?" coincide con el n√∫mero de valores incompletos. Nos interesa que todos los atributos sean num√©ricos, con lo cual convertimos el atributo V7 a "character". Posteriormente convertimos los "?" a NA y fin√°lmente se transforma el atributo a "numeric":
 
 ```{r chunk_carga_6}
 breast_cancer_set$V7<-as.character(breast_cancer_set$V7)
@@ -119,7 +119,7 @@ El resultado debe ser un dataset con 683 observaciones y 11 atributos:
 dim(breast_cancer_clean)
 ```
 
-A continuaciÛn se renombran las columnas, de forma que los nombres de los atributos tengan sentido, y se visualizan los primeros registros para comprobar que los atributos han cambiado correctamente:
+A continuaci√≥n se renombran las columnas, de forma que los nombres de los atributos tengan sentido, y se visualizan los primeros registros para comprobar que los atributos han cambiado correctamente:
 
 ```{r chunk_carga_10}
 colnames(breast_cancer_clean)<-c("id", "clump.thick", "uniform.size", "uniform.shape", "adhesion", "epithelial.cell.size", "bare.nuclei", "bland.chromatin", "nucleoli","mitoses","class")
@@ -128,9 +128,9 @@ head(breast_cancer_clean)
 
 
 ## 2. Limpieza de los datos
-### A. SelecciÛn de los datos de interÈs a analizar. øCu·les son los campos m·s relevantes para responder al problema?
+### A. Selecci√≥n de los datos de inter√©s a analizar. ¬øCu√°les son los campos m√°s relevantes para responder al problema?
 
-Para realizar el estudio de las muestras, utilizaremos la informaciÛn proporcionada por los atributos 2 al 10, es decir, todos los atributos excepto "id" y "class". El atributo "id" nos permite identificar de forma unÌvoca a una muestra dentro del conjunto de muestras, pero es simplemente un identificador, no proporciona ninguna informaciÛn valiosa de las caracterÌsticas de la muestra. El atributo "class" indica la clase a la que pertenece la muestra. Es decir, ha sido aÒadido a posteriori una vez que se han estudiado el resto de caracterÌsticas de la prueba. Por tanto, lo descartamos para nuestro an·lisis. Este campo si que ser· importante m·s adelante, ya que nos servir· para comprobar si nuestro estudio clasifica las muestras correctamente. Por ello, creamos un vector para almacenar los valores del atributo "class" y poder ser utilizado posteriormente. La variable se llamar· **clases_objetivo**:
+Para realizar el estudio de las muestras, utilizaremos la informaci√≥n proporcionada por los atributos 2 al 10, es decir, todos los atributos excepto "id" y "class". El atributo "id" nos permite identificar de forma un√≠voca a una muestra dentro del conjunto de muestras, pero es simplemente un identificador, no proporciona ninguna informaci√≥n valiosa de las caracter√≠sticas de la muestra. El atributo "class" indica la clase a la que pertenece la muestra. Es decir, ha sido a√±adido a posteriori una vez que se han estudiado el resto de caracter√≠sticas de la prueba. Por tanto, lo descartamos para nuestro an√°lisis. Este campo si que ser√° importante m√°s adelante, ya que nos servir√° para comprobar si nuestro estudio clasifica las muestras correctamente. Por ello, creamos un vector para almacenar los valores del atributo "class" y poder ser utilizado posteriormente. La variable se llamar√° **clases_objetivo**:
 
 ```{r chunk_carga_11}
 clases_objetivo<-breast_cancer_clean$class
@@ -149,56 +149,56 @@ Cambiamos la clase a "B" y a "M", si el tumor es Benigno o Maligno:
 breast_cancer_clean$class <- factor (breast_cancer_clean$class, labels = c("B", "M"))
 ```
 
-El nuevo dataset deber· tener 683 observaciones y 10 atributos:
+El nuevo dataset deber√° tener 683 observaciones y 10 atributos:
 
 ```{r chunk_carga_14}
 dim(breast_cancer_clean)
 ```
 
 
-### B. øLos datos contienen ceros o elementos vacÌos? øY valores extremos? øCÛmo gestionarÌas cada uno de estos casos?
+### B. ¬øLos datos contienen ceros o elementos vac√≠os? ¬øY valores extremos? ¬øC√≥mo gestionar√≠as cada uno de estos casos?
 
-Como se comprobÛ anterioremte, el *dataset original* contenÌa 16 valores incompletos. En este caso, una vez detectados pasamos a su eliminaciÛn, tras comprobar que no suponÌa un gran impacto en la calidad del dataset resultante.
+Como se comprob√≥ anterioremte, el *dataset original* conten√≠a 16 valores incompletos. En este caso, una vez detectados pasamos a su eliminaci√≥n, tras comprobar que no supon√≠a un gran impacto en la calidad del dataset resultante.
 
-Realizamos la comprobaciÛn de la no existencia de valores extremos:
+Realizamos la comprobaci√≥n de la no existencia de valores extremos:
 
 ```{r chunk_2_b_1}
 summary(breast_cancer_clean)
 ```
 
-Como se puede comprobar, los valores de los atributos est·n comprendidos en el rango [1-10], y se corresponde con los valores que se indicaban en la informaciÛn del dataset original. Es decir, no hay valores extremos.
+Como se puede comprobar, los valores de los atributos est√°n comprendidos en el rango [1-10], y se corresponde con los valores que se indicaban en la informaci√≥n del dataset original. Es decir, no hay valores extremos.
 
-En el caso de haber detectado la presencia de alg˙n valor fuera del rango de valores permitidos podrÌamos optar por alguna de las siguientes soluciones:
+En el caso de haber detectado la presencia de alg√∫n valor fuera del rango de valores permitidos podr√≠amos optar por alguna de las siguientes soluciones:
 
-**EliminaciÛn del registro que los contiene.** DependerÌa de si el n˙mero de registros afectados no tiene un gran impacto en la calidad del dataset resultante.
+**Eliminaci√≥n del registro que los contiene.** Depender√≠a de si el n√∫mero de registros afectados no tiene un gran impacto en la calidad del dataset resultante.
 
-**Ajustar el valor al lÌmite m·s cercano.** TendrÌamos que hacer la asumpciÛn de que un valor mayor que 10 es 10 y un valor menor que 1 es 1.
+**Ajustar el valor al l√≠mite m√°s cercano.** Tendr√≠amos que hacer la asumpci√≥n de que un valor mayor que 10 es 10 y un valor menor que 1 es 1.
 
-## 3. An·lisis de los datos
+## 3. An√°lisis de los datos
 
-A partir de ahora sÛlo trabajaremos sobre el dataset *breast_cancer_clean*.
+A partir de ahora s√≥lo trabajaremos sobre el dataset *breast_cancer_clean*.
 
-### 3.1. SelecciÛn de los grupos de datos que se quieren analizar/comparar
+### 3.1. Selecci√≥n de los grupos de datos que se quieren analizar/comparar
 
 Analizaremos y compararemos todos los atributos del dataset para identificar cuales de ellos son los importantes para clasificar si el cancer es *benigno* o *maligno*. 
-En primer lugar, observamos que el dataset no est· equilibrado:
+En primer lugar, observamos que el dataset no est√° equilibrado:
 
 ```{r chunk_3_1_1}
-barplot (table(breast_cancer_clean$class), xlab = "Tipo de cancer", ylab = "numero de casos", col=c("darkblue","red"), main = "DistribuciÛn de clases en el dataset breast_cancer_clean")
+barplot (table(breast_cancer_clean$class), xlab = "Tipo de cancer", ylab = "numero de casos", col=c("darkblue","red"), main = "Distribuci√≥n de clases en el dataset breast_cancer_clean")
 
 prop.table(table(breast_cancer_clean$class))
 ```
 
-Vemos que hay m·s caso de cancer *begnino* que *maligno*. Esto es lo esperado en el caso de dataset con enfermedades. 
+Vemos que hay m√°s caso de cancer *begnino* que *maligno*. Esto es lo esperado en el caso de dataset con enfermedades. 
 
-TambiÈn se puede observar que existe una alta correlaciÛn entre la variable *uniform.size* y *uniform.shape*
+Tambi√©n se puede observar que existe una alta correlaci√≥n entre la variable *uniform.size* y *uniform.shape*
 
 ```{r chunk_3_1_2}
 corr_mat <- cor(breast_cancer_clean[,1:9])
 corrplot(corr_mat, order = "hclust", tl.cex = 1, addrect = 8)
 ```
 
-Podemos mostrar las distribuciones de las variables seg˙n el cancer es "benigno" o "maligno"
+Podemos mostrar las distribuciones de las variables seg√∫n el cancer es "benigno" o "maligno"
 
 ```{r chunk_3_1_3}
 benign <- breast_cancer_clean[breast_cancer_clean$class == "B", ]
@@ -210,12 +210,12 @@ for (i in 1:9) {
 }
 ```
 
-Se puede observar que para casi todas las variables, los valores para el caso de cancer "benigno" son muy pequeÒos. Sin embargo, para el cancer "maligno" los valores est·n mucho m·s distribuidos.
+Se puede observar que para casi todas las variables, los valores para el caso de cancer "benigno" son muy peque√±os. Sin embargo, para el cancer "maligno" los valores est√°n mucho m√°s distribuidos.
 
 
-### 3.2. ComprobaciÛn de la normalidad y homogeneidad de la varianza. Si es necesario (y posible), aplicar transformaciones que normalicen los datos.
+### 3.2. Comprobaci√≥n de la normalidad y homogeneidad de la varianza. Si es necesario (y posible), aplicar transformaciones que normalicen los datos.
 
-Para comprobar la normalidad de las distintas variables podemos utilizar gr·ficas Q-Q y comprobar si diferen de una distribuciÛn normal.
+Para comprobar la normalidad de las distintas variables podemos utilizar gr√°ficas Q-Q y comprobar si diferen de una distribuci√≥n normal.
 
 ```{r chunk_3_2_1}
 par(mfrow=c(3,3))
@@ -230,9 +230,9 @@ for (i in 1:9) {
 }
 ```
 
-Visualmente se puede comprobar que ninguna de las variables sigue una distribuciÛn normal ya que los puntos est·n fuera de la linea recta.
+Visualmente se puede comprobar que ninguna de las variables sigue una distribuci√≥n normal ya que los puntos est√°n fuera de la linea recta.
 
-Para comprobar analiticamente que ninguna de las variables sigue una distribuciÛn normal podemos usar el **test de Shapiro-Wilks*:
+Para comprobar analiticamente que ninguna de las variables sigue una distribuci√≥n normal podemos usar el **test de Shapiro-Wilks*:
 
 **Test de Shapiro-Wilks**
 
@@ -242,42 +242,42 @@ shapiro.test (malign$clump.thick)
 shapiro.test (benign$uniform.size)
 shapiro.test (malign$uniform.size)
 ```
-El test lo he aplicado para las variables **clump.thick** y **uniform.size**. Se puede ver como en ambos casos el *p-valor* es muy inferior a 0.05, con lo cual podemos rechazar la hipotÈsis nula y asumir que las variables no siguen una distribuciÛn normal.
-Podemos mostrar la funciÛn de distribuciÛn para comprobar sigue o no forma de campana:
+El test lo he aplicado para las variables **clump.thick** y **uniform.size**. Se puede ver como en ambos casos el *p-valor* es muy inferior a 0.05, con lo cual podemos rechazar la hipot√©sis nula y asumir que las variables no siguen una distribuci√≥n normal.
+Podemos mostrar la funci√≥n de distribuci√≥n para comprobar sigue o no forma de campana:
 
 ```{r chunk_3_2_3}
 ggdensity(breast_cancer_clean$clump.thick, 
          main = "Grafico de Densidad del clump thick",
-         xlab = "TamaÒo del clump thick")
+         xlab = "Tama√±o del clump thick")
 ```
 
-Como se puede observar una vez m·s la distribuciÛn no sigue una forma de campana, con lo que concluimos que las variables de nuestro dataset no siguen distribuciones normales.
+Como se puede observar una vez m√°s la distribuci√≥n no sigue una forma de campana, con lo que concluimos que las variables de nuestro dataset no siguen distribuciones normales.
 
 Vamos a intentar transformar las variables a distribuciones normales:
 
 ```{r chunk_3_2_4}
 par(mfrow=c(3,1))
 plotNormalHistogram(benign$clump.thick, xlab = "clump.thick", main = "Distribucion sin transformar")
-plotNormalHistogram(log10(benign$clump.thick + 1), main = "Usando una transformaciÛn logaritmica")
-plotNormalHistogram(sqrt(benign$clump.thick), main = "Usando una transformaciÛn de raÌz cuadrada")
+plotNormalHistogram(log10(benign$clump.thick + 1), main = "Usando una transformaci√≥n logaritmica")
+plotNormalHistogram(sqrt(benign$clump.thick), main = "Usando una transformaci√≥n de ra√≠z cuadrada")
 ```
 
-- Hemos usado dos transformaciones para intentar normalizar la distribuciÛn. Una **transformaciÛn logaritmica** y una **transformaciÛn de raiz cuadrada**. 
-- De las tres distribuciÛn la que m·s se acerca a una normal es la **transformaciÛn logaritmica**.
+- Hemos usado dos transformaciones para intentar normalizar la distribuci√≥n. Una **transformaci√≥n logaritmica** y una **transformaci√≥n de raiz cuadrada**. 
+- De las tres distribuci√≥n la que m√°s se acerca a una normal es la **transformaci√≥n logaritmica**.
 
-A˙n asÌ, esta distribuciÛn tambiÈn falla el test de normalidad de Shapiro.
-Es por ello, que si queremos realizar pruebas estadisticas tendremos que realizarlas con **tests no par·metricos**.
+A√∫n as√≠, esta distribuci√≥n tambi√©n falla el test de normalidad de Shapiro.
+Es por ello, que si queremos realizar pruebas estadisticas tendremos que realizarlas con **tests no par√°metricos**.
 
-**An·lisis de varianza**
+**An√°lisis de varianza**
 
-Ya sabemos que las distribuciones de las variables para cada una de las clases no son normales y que sÛlo tenemos dos clases. Normalmente, el an·lisis de varianza se aplica cuando tenemos m·s de dos clases para ver si la varianza entre las dos distribuciones es la misma o difieren. Y en caso de que difieran, entre cuales de las clases.
+Ya sabemos que las distribuciones de las variables para cada una de las clases no son normales y que s√≥lo tenemos dos clases. Normalmente, el an√°lisis de varianza se aplica cuando tenemos m√°s de dos clases para ver si la varianza entre las dos distribuciones es la misma o difieren. Y en caso de que difieran, entre cuales de las clases.
 Aunque sabemos que no podemos aplicar **ANOVA** en este caso ya que las distribuciones no son normales vamos a aplicarlo para ver que nos dice sobre la varianza entre las clases:
 
 ```{r chunk_3_2_5}
 anova(lm (breast_cancer_clean$clump.thick ~ breast_cancer_clean$class))
 ```
 
-Nos sale un *p-valor* muy inferior a 0.05, con lo cual podemos rechazar la hipotÈsis nula y asumir que la varianza de las dos clases son distintas.
+Nos sale un *p-valor* muy inferior a 0.05, con lo cual podemos rechazar la hipot√©sis nula y asumir que la varianza de las dos clases son distintas.
 
 En este caso una manera muy sencilla de ver que las distribuciones son muy distintas es usando boxplots:
 
@@ -288,7 +288,7 @@ for (i in 1:9) {
 }
 ```
 
-Para finalizar, vamos a realizar el **an·lisis de varianza** utilizando un **mÈtodo no par·metrico** como el de Kruskal:
+Para finalizar, vamos a realizar el **an√°lisis de varianza** utilizando un **m√©todo no par√°metrico** como el de Kruskal:
 
 
 ```{r chunk_3_2_7}
@@ -302,11 +302,11 @@ print(cancer.kruskal)
 El *p-valor* es inferior a 0.05, con lo que la varianza de las dos clases son distintas.
 
 
-### 3.3. AplicaciÛn de pruebas estadÌsticas (tantas como sea posible) para comparar los grupos de datos.
+### 3.3. Aplicaci√≥n de pruebas estad√≠sticas (tantas como sea posible) para comparar los grupos de datos.
 
 * **Test de dos muestras**
 
-Podemos usar el **test de Wilcoxon** que utiliza mÈtodos no par·metricos para probar que las distribuciones de las dos clases de cancer son distintas:
+Podemos usar el **test de Wilcoxon** que utiliza m√©todos no par√°metricos para probar que las distribuciones de las dos clases de cancer son distintas:
 
 ```{r chunk_3_3_1}
 wilcox.test(breast_cancer_clean$clump.thick ~ breast_cancer_clean$class)
@@ -327,21 +327,21 @@ El *p-valor* es inferior a 0.05, con lo que rechazamos la hipotesis nula.
 
 * **Test de Barlett**
 
-Podemos usar el test de Barlett para comprobar para probar si k muestras provienen de poblaciones con la misma varianza. A las varianzas iguales a travÈs de las muestras se llama *homogeneidad de varianzas*. El an·lisis de la varianza ANOVA, suponen que las varianzas son iguales en todos los grupos o muestras. La prueba de Bartlett se puede utilizar para verificar esa suposiciÛn.
+Podemos usar el test de Barlett para comprobar para probar si k muestras provienen de poblaciones con la misma varianza. A las varianzas iguales a trav√©s de las muestras se llama *homogeneidad de varianzas*. El an√°lisis de la varianza ANOVA, suponen que las varianzas son iguales en todos los grupos o muestras. La prueba de Bartlett se puede utilizar para verificar esa suposici√≥n.
 
 ```{r chunk_3_3_3}
 bartlett.test(breast_cancer_clean$clump.thick ~ breast_cancer_clean$class)
 ```
 
-* **RegresiÛn lineal m˙ltiple**
+* **Regresi√≥n lineal m√∫ltiple**
 
-Generando un modelo de regresiÛn multiple podremos analizar el nivel de influencia de un conjunto de variables respecto a otra. Se estudiar· que variable ejerce mayor influencia positiva y mayor influencia negativa sobre la variable dependiente.
+Generando un modelo de regresi√≥n multiple podremos analizar el nivel de influencia de un conjunto de variables respecto a otra. Se estudiar√° que variable ejerce mayor influencia positiva y mayor influencia negativa sobre la variable dependiente.
 
 El estudio se divide en los grupos de muestras benignas y malignas.
 
 Por tanto, vamos generando modelos modificando la variable dependiente en cada caso.
 
-**RegresiÛn multiple en muestras benignas**
+**Regresi√≥n multiple en muestras benignas**
 
 *clump.thick*
 ```{r chunk_rlm_clump.thick2}
@@ -378,7 +378,7 @@ sort(glm(epithelial.cell.size ~ clump.thick + adhesion + uniform.size + uniform.
 ```
 
 
-**mitoses**, **bland.chromatin** y **clump.thick** influyen de forma negativa. **nucleoli** es la que m·s influye positivamente.
+**mitoses**, **bland.chromatin** y **clump.thick** influyen de forma negativa. **nucleoli** es la que m√°s influye positivamente.
 
 
 *bare.nuclei*
@@ -386,7 +386,7 @@ sort(glm(epithelial.cell.size ~ clump.thick + adhesion + uniform.size + uniform.
 sort(glm(bare.nuclei ~ clump.thick + adhesion + uniform.size + uniform.shape + epithelial.cell.size + bland.chromatin + nucleoli + mitoses, data = benign)$coefficients)
 ```
 
-La variable **clump.thick** influye negativamente, mientras que **uniform.size** es que la influye de forma positiva con m·s fuerza.
+La variable **clump.thick** influye negativamente, mientras que **uniform.size** es que la influye de forma positiva con m√°s fuerza.
 
 
 *bland.chromatin*
@@ -394,7 +394,7 @@ La variable **clump.thick** influye negativamente, mientras que **uniform.size**
 sort(glm(bland.chromatin ~ clump.thick + adhesion + uniform.size + uniform.shape + epithelial.cell.size + bare.nuclei + nucleoli + mitoses, data = benign)$coefficients)
 ```
 
-**mitoses**, **epithelial.cell.size**, **uniform.shape** y **adhesion** influyen de forma negativa sobre **bland.chromatin** mientras que **nucleoli** es la que influye de forma m·s positiva.
+**mitoses**, **epithelial.cell.size**, **uniform.shape** y **adhesion** influyen de forma negativa sobre **bland.chromatin** mientras que **nucleoli** es la que influye de forma m√°s positiva.
 
 *nucleoli*
 ```{r chunk_rlm_nucleoli2}
@@ -408,16 +408,16 @@ Todas influyen de forma positiva en **nucleoli**, pero la que lo hace con mayor 
 sort(glm(mitoses ~ clump.thick + adhesion + uniform.size + uniform.shape + epithelial.cell.size + bare.nuclei + bland.chromatin + nucleoli, data = benign)$coefficients)
 ```
 
-Por ˙ltimo, **mitoses** se ve influenciada negativamente por **epithelial.cell.size**, **bland.chromatin**, **uniform.shape** y **clump.thick**. **bare.nuclei** es la que influye de forma m·s positiva.
+Por √∫ltimo, **mitoses** se ve influenciada negativamente por **epithelial.cell.size**, **bland.chromatin**, **uniform.shape** y **clump.thick**. **bare.nuclei** es la que influye de forma m√°s positiva.
 
 
-En el caso de muestras de tumor benigno, observamos que la mayorÌa de las variables tienen una influencia positiva en el resto. Aquellas que influyen de forma negativa lo hacen en coeficientes tan bajos que el cambio apenas es apreciable. La mayor influencia entre variables la encontramos entre **uniform.size** y **uniform.shape** de forma bidireccional. Por tanto a medida que aumente una deberÌa aumentar la otra. 
+En el caso de muestras de tumor benigno, observamos que la mayor√≠a de las variables tienen una influencia positiva en el resto. Aquellas que influyen de forma negativa lo hacen en coeficientes tan bajos que el cambio apenas es apreciable. La mayor influencia entre variables la encontramos entre **uniform.size** y **uniform.shape** de forma bidireccional. Por tanto a medida que aumente una deber√≠a aumentar la otra. 
 
 
 
-**RegresiÛn multiple en muestras malignas**
+**Regresi√≥n multiple en muestras malignas**
 
-Se repite el proceso para las muestras de tumor malignas. En este caso se incluir· un comentario final, ya que los resultados de los coeficientes de cada modelo de regresiÛn hablan por si solos en cada caso. 
+Se repite el proceso para las muestras de tumor malignas. En este caso se incluir√° un comentario final, ya que los resultados de los coeficientes de cada modelo de regresi√≥n hablan por si solos en cada caso. 
 
 *clump.thick*
 ```{r chunk_rlm_clump.thick}
@@ -469,7 +469,7 @@ Los resultados obtenidos en el caso de muestras tumorales malignas son similares
 
 * **Estudio de las medias de las poblaciones**
 
-Al dividir el conjunto de datos originales en 2 subconjuntos claramente diferenciados, hemos aplicado clustering de forma manual. Al igual que lo harÌa un algoritmo de clustering para crear los centros de los grupos, podemos realizar una comparaciÛn de las medias de las variables de ambos grupos para comprobar si podemos establecer alguna diferencia entre los grupos:
+Al dividir el conjunto de datos originales en 2 subconjuntos claramente diferenciados, hemos aplicado clustering de forma manual. Al igual que lo har√≠a un algoritmo de clustering para crear los centros de los grupos, podemos realizar una comparaci√≥n de las medias de las variables de ambos grupos para comprobar si podemos establecer alguna diferencia entre los grupos:
 
 ```{r}
 benign_mean<-sapply(benign[,1:9], mean)
@@ -478,22 +478,22 @@ malign_mean<-sapply(malign[,1:9], mean)
 (df<-as.data.frame(t(cbind(benign_mean, malign_mean))))
 ```
 
-A continuaciÛn mostramos de menor a mayor la diferencia entre las variables de ambas poblaciones:
+A continuaci√≥n mostramos de menor a mayor la diferencia entre las variables de ambas poblaciones:
 
 ```{r}
 sort(sapply(df, diff))
 ```
 
-Las muestras de tumores benignos y malignos muestran las mayores diferencias respecto a las variables **bare.nuclei**, **uniform.size** y **uniform.shape**, por lo que se puede usar esta informaciÛn, por lo que podrÌamos concluir que estos son los 3 atributos m·s determinantes para distinguir una muestra. Por otro lado y siguiente este razonamiento, la variable **mitoses** serÌa la menos determinante a la hora de distinguir una muestra de otra.
+Las muestras de tumores benignos y malignos muestran las mayores diferencias respecto a las variables **bare.nuclei**, **uniform.size** y **uniform.shape**, por lo que se puede usar esta informaci√≥n, por lo que podr√≠amos concluir que estos son los 3 atributos m√°s determinantes para distinguir una muestra. Por otro lado y siguiente este razonamiento, la variable **mitoses** ser√≠a la menos determinante a la hora de distinguir una muestra de otra.
 
-## 4. Conclusiones del An·lisis
+## 4. Conclusiones del An√°lisis
 
-DespuÈs de analizar el dataset podemos concluir que:
+Despu√©s de analizar el dataset podemos concluir que:
 
-- Las observaciones del dataset no est·n *equilibradas*. Tenemos m·s observaciones de c·ncer benigno que de c·ncer maligno
-- Las 9 variables numÈricas que componen el dataset est·n poco correlacionadas entre ellas, salvo el uniform.size y uniform.shape
-- Las distribuciones de las observaciones de c·ncer benigno y c·ncer maligno son distintas. La distribuciones de c·ncer benigno tienen n˙meros bajos en todas las variables, mientras que las distribuciones de c·ncer maligno est·n m·s distribuidas en el rango de las variables y en algunos casos toma valores altos como es el *bare.nuclei*
-- Se observan grandes diferencias entre los centros de las poblaciones, lo que nos da una idea de los atributos que pueden ser m·s significativos a la hora de distinguir muestras.
-- Las distribuciones de las variables no siguen una distribuciÛn normal y son distintas entre ellas para todas las variables. Tanto la media como la varianza.
-- Al no ser distribuciones normales hemos necesitado de tests no paramÈtricos para comprobarlo
+- Las observaciones del dataset no est√°n *equilibradas*. Tenemos m√°s observaciones de c√°ncer benigno que de c√°ncer maligno
+- Las 9 variables num√©ricas que componen el dataset est√°n poco correlacionadas entre ellas, salvo el uniform.size y uniform.shape
+- Las distribuciones de las observaciones de c√°ncer benigno y c√°ncer maligno son distintas. La distribuciones de c√°ncer benigno tienen n√∫meros bajos en todas las variables, mientras que las distribuciones de c√°ncer maligno est√°n m√°s distribuidas en el rango de las variables y en algunos casos toma valores altos como es el *bare.nuclei*
+- Se observan grandes diferencias entre los centros de las poblaciones, lo que nos da una idea de los atributos que pueden ser m√°s significativos a la hora de distinguir muestras.
+- Las distribuciones de las variables no siguen una distribuci√≥n normal y son distintas entre ellas para todas las variables. Tanto la media como la varianza.
+- Al no ser distribuciones normales hemos necesitado de tests no param√©tricos para comprobarlo
 
