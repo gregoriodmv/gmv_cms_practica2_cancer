@@ -1,4 +1,4 @@
-## Práctica2
+# Práctica2
 **Gregorio de Miguel Vadillo**  
 **Carlos Muñiz Solaz**
 
@@ -6,7 +6,7 @@
 
 Repositorio que contiene toda la información acerca de la práctica 2 correspondiente a la asignatura *Tipología y ciclo de vida de los datos*
 
-# Pasos a seguir
+## Pasos a seguir
 Consultad: 
 
   * **[Wiki](../../wiki):** Para información más detallada del **dataset** y del **repositorio**  
@@ -15,7 +15,7 @@ Consultad:
 
   * **[PDF Práctica 2](practica_2.pdf):** PDF con las respuestas a la práctica **CON** las gráficas
 
-# Estructura del repositorio
+## Estructura del repositorio
 La estructura del repositorio es la siguiente:
    * *src*: Directorio que contiene el script *practica_2.Rmd* en R para el procesar el dataset
    * *dataset*: Directorio con tres ficheros:
@@ -28,7 +28,7 @@ La estructura del repositorio es la siguiente:
    * *CC-BY-SA-4.0*: Fichero de licencia
    * *README.md*: Este fichero
 
-# Licencia
+## Licencia
 
 El dataset de procesado de cancer de mama generado por Gregorio de Miguel Vadillo y Carlos Muñiz Solaz se encuentra bajo la licencia **CC-BY-NC-SA 4.0**.  
 https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
@@ -42,7 +42,7 @@ Se ha elegido está licencia ya que permite a otros distribuir, remezclar, retoc
 El dataset original necesita ser citado como se explica en:
 https://archive.ics.uci.edu/ml/citation_policy.html
 
-# Agradecimientos
+## Agradecimientos
 
 Nos gustaría agradecer a:
 
