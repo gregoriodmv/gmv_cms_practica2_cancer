@@ -26,8 +26,19 @@ La estructura del repositorio es la siguiente:
    * *HEADER* y *CC-BY-SA-4.0*: Ficheros de licencia
    * *README.md*: Este fichero
 
- # C
+# Licencia
 
+El dataset de procesado de cancer de mama generado por Gregorio de Miguel Vadillo y Carlos Muñiz Solaz se encuentra bajo la licencia **CC-BY-NC-SA 4.0**.  
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+como se explica en:  
+https://creativecommons.org/licenses/  
+![Alt text](/images/copyright/by-nc-sa.eu.png?raw=true)
+
+Se ha elegido está licencia ya que permite a otros distribuir, remezclar, retocar, y crear a partir de tu obra de modo no comercial, siempre y cuando se nos den crédito y licencien sus nuevas creaciones bajo las mismas condiciones.
+
+El dataset original necesita ser citado como se explica en:
+https://archive.ics.uci.edu/ml/citation_policy.html
 
 # Agradecimientos
 
