@@ -1,6 +1,6 @@
 ---
-title: "Práctica 2 de Tipología de Datos"
 output:
+  word_document: default
   html_document:
     keep_md: yes
 ---
@@ -32,7 +32,10 @@ library (gridExtra)
 
 ## 1. Descripción del dataset. ¿Por qué es importante y qué pregunta/problema pretende responder?
 
-El dataset se corresponde a un conjunto de muestras de cancer de mama recibidas en el Dr. Wolberg, de la Universidad de Wisconsin, en el periodo comprendido entre Enero de 1989 y Noviembre de 1991.
+El dataset se corresponde a un conjunto de *muestras de cancer de mama* recibidas en el Dr. Wolberg, de la Universidad de Wisconsin, en el periodo comprendido entre Enero de 1989 y Noviembre de 1991.
+
+Este dataset se puede descarga desde el siguiente enlace:   
+https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)
 
 El dataset consiste en 699 observaciones y 11 atributos que definen a cada observación. De los 11 atributos, 1 atributo se corresponde con el identificador de la muestra, 9 indican características de una observación y el undécimo indica la clasificación de la muestra como tumor benigno o tumor maligno. Vease a continuación información sobre los atributos:
 
@@ -490,10 +493,10 @@ Las muestras de tumores benignos y malignos muestran las mayores diferencias res
 
 Después de analizar el dataset podemos concluir que:
 
-- Las observaciones del dataset no están *equilibradas*. Tenemos más observaciones de cáncer benigno que de cáncer maligno
-- Las 9 variables numéricas que componen el dataset están poco correlacionadas entre ellas, salvo el uniform.size y uniform.shape
-- Las distribuciones de las observaciones de cáncer benigno y cáncer maligno son distintas. La distribuciones de cáncer benigno tienen números bajos en todas las variables, mientras que las distribuciones de cáncer maligno están más distribuidas en el rango de las variables y en algunos casos toma valores altos como es el *bare.nuclei*
+- Las observaciones del dataset no están **equilibradas**. Tenemos más observaciones de cáncer benigno que de cáncer maligno
+- Las 9 variables numéricas que componen el dataset están poco correlacionadas entre ellas, salvo las variables **uniform.size** y **uniform.shape**
+- Las distribuciones de las observaciones de cáncer benigno y cáncer maligno son distintas. La distribuciones de cáncer benigno tienen números bajos en todas las variables, mientras que las distribuciones de cáncer maligno están más distribuidas en el rango de las variables y en algunos casos toma valores altos como es el **bare.nuclei**
 - Se observan grandes diferencias entre los centros de las poblaciones, lo que nos da una idea de los atributos que pueden ser más significativos a la hora de distinguir muestras.
 - Las distribuciones de las variables no siguen una distribución normal y son distintas entre ellas para todas las variables. Tanto la media como la varianza.
 - Al no ser distribuciones normales hemos necesitado de tests no paramétricos para comprobarlo
-
+- Podemos a partir del análisis de este dataset usar algoritmos de minería de datos que nos permitan construir modelos que clasifiquen automáticamente las muestras
