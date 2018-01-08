@@ -11,7 +11,7 @@ Consultad:
 
   * [Wiki](../../wiki): Para información más detallada del **dataset** y del **repositorio**  
    
-  * [Práctica 2](practica_2.pdf): Para ver las respuestas a la práctica 
+  * [Práctica 2](practica_2.html): Para ver las respuestas a la práctica 
      
 # Estructura del repositorio
 La estructura del repositorio es la siguiente:
