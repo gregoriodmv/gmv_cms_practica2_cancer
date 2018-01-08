@@ -11,8 +11,10 @@ Consultad:
 
   * [Wiki](../../wiki): Para información más detallada del **dataset** y del **repositorio**  
    
-  * [Práctica 2](practica_2.html): Para ver las respuestas a la práctica 
-     
+  * [Práctica 2](practica_2.md): Para ver las respuestas a la práctica **SIN** las gráficas
+
+  * [Práctica 2](practica_2.pdf): PDF con las respuestas a la práctica **CON** las gráficas
+
 # Estructura del repositorio
 La estructura del repositorio es la siguiente:
    * *src*: Directorio que contiene el script *practica_2.Rmd* en R para el procesar el dataset
@@ -21,7 +23,7 @@ La estructura del repositorio es la siguiente:
       - breast-cancer.csv	Dataset original descargado de la página original en formato csv
       - breast_cancer_clean.csv Dataset procesado 
    * *images*: Directorio con todas las imagenes que se visualizan en el proyecto
-   * *practica_2.html* Documento con las respuestas a la práctica en formato HTML
+   * *practica_2.md* Documento con las respuestas a la práctica en formato Markdown
    * *practica_2.pdf* Documento con las respuestas a la práctica en formato PDF
    * *CC-BY-SA-4.0*: Fichero de licencia
    * *README.md*: Este fichero
