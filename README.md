@@ -23,7 +23,7 @@ La estructura del repositorio es la siguiente:
    * *images*: Directorio con todas las imagenes que se visualizan en el proyecto
    * *practica_2.html* Documento con las respuestas a la práctica en formato HTML
    * *practica_2.pdf* Documento con las respuestas a la práctica en formato PDF
-   * *HEADER* y *CC-BY-SA-4.0*: Ficheros de licencia
+   * *CC-BY-SA-4.0*: Fichero de licencia
    * *README.md*: Este fichero
 
 # Licencia
