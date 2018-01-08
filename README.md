@@ -28,3 +28,11 @@ La estructura del repositorio es la siguiente:
 
  # C
 
+
+# Agradecimientos
+
+Nos gustaría agradecer a:
+
+Lichman, M. (2013). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
+
+Por la libre distribución del dataset que hemos podido utilizar para la realización de esta práctica
