@@ -9,11 +9,11 @@ Repositorio que contiene toda la información acerca de la práctica 2 correspon
 # Pasos a seguir
 Consultad: 
 
-  * [Wiki](../../wiki): Para información más detallada del **dataset** y del **repositorio**  
+  * **[Wiki](../../wiki):** Para información más detallada del **dataset** y del **repositorio**  
    
-  * [Práctica 2](practica_2.md): Para ver las respuestas a la práctica **SIN** las gráficas
+  * **[Página Web de la Práctica 2](practica_2.md):** Para ver las respuestas a la práctica **SIN** las gráficas
 
-  * [Práctica 2](practica_2.pdf): PDF con las respuestas a la práctica **CON** las gráficas
+  * **[PDF Práctica 2](practica_2.pdf):** PDF con las respuestas a la práctica **CON** las gráficas
 
 # Estructura del repositorio
 La estructura del repositorio es la siguiente:
