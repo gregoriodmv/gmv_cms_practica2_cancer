@@ -23,8 +23,8 @@ La estructura del repositorio es la siguiente:
       - breast-cancer.csv	Dataset original descargado de la página original en formato csv
       - breast_cancer_clean.csv Dataset procesado 
    * *images*: Directorio con todas las imagenes que se visualizan en el proyecto
-   * *practica_2.md* Documento con las respuestas a la práctica en formato Markdown
-   * *practica_2.pdf* Documento con las respuestas a la práctica en formato PDF
+   * *practica_2.md:* Documento con las respuestas a la práctica en formato Markdown
+   * *practica_2.pdf:* Documento con las respuestas a la práctica en formato PDF
    * *CC-BY-SA-4.0*: Fichero de licencia
    * *README.md*: Este fichero
 
