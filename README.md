@@ -1,4 +1,4 @@
-## gmv_cms_tipo_practica2
+## Practica2
 **Gregorio de Miguel Vadillo**  
 **Carlos Muñiz Solaz**
 
