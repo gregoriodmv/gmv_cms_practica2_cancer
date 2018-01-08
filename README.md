@@ -6,6 +6,13 @@
 
 Repositorio que contiene toda la información acerca de la práctica 2 correspondiente a la asignatura *Tipología y ciclo de vida de los datos*
 
+# Pasos a seguir
+Consultad: 
+
+  * *Wiki:* Para información más detallada del dataset y del repositorio  
+    [Wiki](../../wiki)  
+  * *practica_2:* Para ver las respuestas a la práctica 
+     
 # Estructura del repositorio
 La estructura del repositorio es la siguiente:
    * *src*: Directorio que contiene el script *practica_2.Rmd* en R para el procesar el dataset
@@ -19,10 +26,5 @@ La estructura del repositorio es la siguiente:
    * *HEADER* y *CC-BY-SA-4.0*: Ficheros de licencia
    * *README.md*: Este fichero
 
-# Pasos a seguir
-Consultad:    
-     * *Wiki:* Para información más detallada del dataset y del repositorio
-       [Wiki](../../wiki)  
-     * *practica_2:* Para ver las respuestas a la práctica 
-     
  # C
+
