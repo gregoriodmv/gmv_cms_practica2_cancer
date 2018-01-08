@@ -20,9 +20,9 @@ La estructura del repositorio es la siguiente:
    * *README.md*: Este fichero
 
 # Pasos a seguir
-   Consultar: 
+Consultad:    
      * *Wiki:* Para información más detallada del dataset y del repositorio
-       [Wiki](../../wiki)
+       [Wiki](../../wiki)  
      * *practica_2:* Para ver las respuestas a la práctica 
      
  # C
