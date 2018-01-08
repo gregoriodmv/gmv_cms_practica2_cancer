@@ -33,7 +33,7 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
 
 como se explica en:  
 https://creativecommons.org/licenses/  
-![Alt text](/images/by-nc-sa.eu.png?raw=true)
+![Alt text](images/by-nc-sa.eu.png)
 
 Se ha elegido está licencia ya que permite a otros distribuir, remezclar, retocar, y crear a partir de tu obra de modo no comercial, siempre y cuando se nos den crédito y licencien sus nuevas creaciones bajo las mismas condiciones.
 
