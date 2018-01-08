@@ -4,7 +4,7 @@
 
 **Fecha:** Diciembre 2017 - Enero 2018
 
-Repositorio que contiene toda la información acerca de la práctica 2 correspondiente a la asignatura "Tipología y ciclo de vida de los datos"
+Repositorio que contiene toda la información acerca de la práctica 2 correspondiente a la asignatura *Tipología y ciclo de vida de los datos*
 
 # Estructura del repositorio
 La estructura del repositorio es la siguiente:
